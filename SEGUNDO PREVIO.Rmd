@@ -39,5 +39,17 @@ mutate (stackloss,porcentaje_de_acido = ((Acid.Conc./10)+50))
 
 ```
 
+```{r}
+mutate (stackloss,Relacion.T.F = Air.Flow/Water.Temp)
+```
+```{r}
+filter(stackloss,Water.Temp == 19)
+
+```
+
+
+```{r}
+filter(stackloss,Water.Temp == 23)
+```
 
 
