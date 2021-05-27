@@ -15,11 +15,29 @@ Este es el segundo previo de diseño de experimentos, teniendo como base de dato
 
 ```{r stackloss}
 View(stackloss)
+force(stackloss)
 ```
 
 
 data(stackloss)
 stackloss
 
-Porcentaje_de_concentracion <- 
+# porcentaje de acido = (Acid.Conc./10)+50
+
+names(stackloss)
+ncol(stackloss)
+nrow(stackloss)
+
+```{r}
+summary(stackloss)
+```
+```{r}
+library(tidyverse)
+
+mutate (stackloss,porcentaje_de_acido = ((Acid.Conc./10)+50))
+
+
+```
+
+
 
