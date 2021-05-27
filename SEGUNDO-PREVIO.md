@@ -136,6 +136,10 @@ colSums(Relacion.T.F)
 
     ## [1] 2.879109
 
+``` r
+# De aqui podemos deducir que la relacion promedio entre la temperatura y el funcionamiento de la planta es de 2.87 a 1, es decir por cada grado de temperatura que aumente el agua, el funcionamiento ira creciendo exponencialmente de 2.87 en 2.87
+```
+
 ## Filtracion de datos por Temperaturas: 19° y 23°
 
 ``` r
@@ -156,3 +160,20 @@ filter(stackloss,Water.Temp == 23)
     ## 2       58         23         87         15
 
 ## Desviacion Estandar
+
+``` r
+temp23 <- filter(stackloss,Water.Temp == 23)
+
+A <- c(58,50,50,62,58)
+W <- c(19,19,19,23,23)
+Ac <- c(93,72,79,87,87)
+S <- c(12,8,8,18,15)
+
+sd(c(A,Ac,W,S))
+```
+
+    ## [1] 29.70557
+
+``` r
+# La desviacion estandar entre los datos de la tabla es de 29.70557 
+```
