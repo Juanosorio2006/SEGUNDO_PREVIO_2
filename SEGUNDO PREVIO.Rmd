@@ -81,4 +81,24 @@ sd(c(A,Ac,W,S))
 
 # La desviacion estandar entre los datos de la tabla es de 29.70557 
 ```
+## *Analisis Libre*
 
+# Calcularemos el promedio de la tasa de funcionamiento de la planta a traves de los datos suministrados en la columna de air.flow
+
+```{r}
+data("stackloss")
+colSums(stackloss)
+```
+```{r}
+1269/21
+
+## El Funcionamiento de la planta tiene un promedio de la tase de funcionamiento de 60.42857
+```
+## Relacion entre la concentracion de acido y la tasa de funcionamiento de la planta
+
+```{r}
+mutate (stackloss, C.AvsT.F = Acid.Conc./Air.Flow)
+
+# Es una relacion que tiende al 1:1, es decir, si sube la concentracion sube el rendimiento y viceversa
+```
+## Fin del parcial

@@ -177,3 +177,60 @@ sd(c(A,Ac,W,S))
 ``` r
 # La desviacion estandar entre los datos de la tabla es de 29.70557 
 ```
+
+## *Analisis Libre*
+
+# Calcularemos el promedio de la tasa de funcionamiento de la planta a traves de los datos suministrados en la columna de air.flow
+
+``` r
+data("stackloss")
+colSums(stackloss)
+```
+
+    ##   Air.Flow Water.Temp Acid.Conc. stack.loss 
+    ##       1269        443       1812        368
+
+``` r
+1269/21
+```
+
+    ## [1] 60.42857
+
+``` r
+## El Funcionamiento de la planta tiene un promedio de la tase de funcionamiento de 60.42857
+```
+
+## Relacion entre la concentracion de acido y la tasa de funcionamiento de la planta
+
+``` r
+mutate (stackloss, C.AvsT.F = Acid.Conc./Air.Flow)
+```
+
+    ##    Air.Flow Water.Temp Acid.Conc. stack.loss C.AvsT.F
+    ## 1        80         27         89         42 1.112500
+    ## 2        80         27         88         37 1.100000
+    ## 3        75         25         90         37 1.200000
+    ## 4        62         24         87         28 1.403226
+    ## 5        62         22         87         18 1.403226
+    ## 6        62         23         87         18 1.403226
+    ## 7        62         24         93         19 1.500000
+    ## 8        62         24         93         20 1.500000
+    ## 9        58         23         87         15 1.500000
+    ## 10       58         18         80         14 1.379310
+    ## 11       58         18         89         14 1.534483
+    ## 12       58         17         88         13 1.517241
+    ## 13       58         18         82         11 1.413793
+    ## 14       58         19         93         12 1.603448
+    ## 15       50         18         89          8 1.780000
+    ## 16       50         18         86          7 1.720000
+    ## 17       50         19         72          8 1.440000
+    ## 18       50         19         79          8 1.580000
+    ## 19       50         20         80          9 1.600000
+    ## 20       56         20         82         15 1.464286
+    ## 21       70         20         91         15 1.300000
+
+``` r
+# Es una relacion que tiende al 1:1, es decir, si sube la concentracion sube el rendimiento y viceversa
+```
+
+## Fin del parcial
