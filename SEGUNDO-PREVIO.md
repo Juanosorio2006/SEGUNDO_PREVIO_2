@@ -97,6 +97,8 @@ mutate (stackloss,porcentaje_de_acido = ((Acid.Conc./10)+50))
     ## 20       56         20         82         15                58.2
     ## 21       70         20         91         15                59.1
 
+## Relación entre la temperatura del agua y la tasa de funcionamiento de la planta por observación
+
 ``` r
 mutate (stackloss,Relacion.T.F = Air.Flow/Water.Temp)
 ```
@@ -124,6 +126,18 @@ mutate (stackloss,Relacion.T.F = Air.Flow/Water.Temp)
     ## 20       56         20         82         15     2.800000
     ## 21       70         20         91         15     3.500000
 
+## Promedio de la relacion
+
+colSums(Relacion.T.F)
+
+``` r
+60.46128/21
+```
+
+    ## [1] 2.879109
+
+## Filtracion de datos por Temperaturas: 19° y 23°
+
 ``` r
 filter(stackloss,Water.Temp == 19)
 ```
@@ -140,3 +154,5 @@ filter(stackloss,Water.Temp == 23)
     ##   Air.Flow Water.Temp Acid.Conc. stack.loss
     ## 1       62         23         87         18
     ## 2       58         23         87         15
+
+## Desviacion Estandar
